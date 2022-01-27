@@ -18,7 +18,7 @@ async function seed() {
 
     
     // create post==================================
-    const createPost = await prisma.post.create({
+    const createdPost = await prisma.post.create({
         data:{
                 title: '10 things you need to know about web development',
                 post: ' the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie',
@@ -31,10 +31,10 @@ async function seed() {
                 }
         }
     })
-    console.log('post created', createPost);
+    console.log('post created', createdPost);
 
     // create comment==================================
-    const createComment = await prisma.comment.create({
+    const createdComment = await prisma.comment.create({
         data: {
             content: 'pposed to using content here, making it look like readable English',
             user: {
@@ -44,12 +44,12 @@ async function seed() {
             },
             post: {
                 connect: {
-                    id: createPost.id
+                    id: createdPost.id
                 }
             }
         }
     })
-    console.log('comment created', createComment);
+    console.log('comment created', createdComment);
 
    
     
