@@ -26,7 +26,8 @@ model Profile {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  bio         String
+  bio         String    @db.Char(120)
+  imageUrl    String
   user        User      @relation(fields: [userId], references: [id])
   userId      Int
 }
@@ -35,8 +36,10 @@ model Post {
   id          Int       @id @default(autoincrement())
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  title       String
+  title       String    @db.Char(150)
   post        String    @db.VarChar(500)
+  postImg     String?
+  published   Boolean   @default(false)
   user        User      @relation(fields: [userId], references: [id])
   userId      Int
   comments    Comment[]

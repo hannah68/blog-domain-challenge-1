@@ -9,6 +9,7 @@ async function seed() {
             profile: {
                 create: {
                     bio: 'manager from london',
+                    imageUrl: 'https://randomuser.me/api/portraits/men/78.jpg'
                 }
             }
         },
@@ -21,6 +22,8 @@ async function seed() {
         data:{
                 title: '10 things you need to know about web development',
                 post: ' the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centurie',
+                postImg: 'www.google.com',
+                published: true,
                 user: {
                     connect: {
                         id: createdUsers.id
