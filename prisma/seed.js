@@ -4,7 +4,8 @@ const prisma = new PrismaClient();
 async function seed() {
     const createdUsers = await prisma.user.create({
         data: { 
-            username: 'alicemartin',
+            username: 'alicemarty',
+            email: 'alicemartin@gmail.com',
             profile: {
                 create: {
                     bio: 'manager from london',
